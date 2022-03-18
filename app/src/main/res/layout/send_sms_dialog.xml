@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="smsInfo"
+            type="com.program.mvvm.model.SmsInfo" />
+    </data>
+    
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+    <EditText
+        android:id="@+id/smsDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:lines="1"
+        android:hint="To: "
+        android:gravity="center_horizontal"
+        tools:ignore="Autofill,HardcodedText,LabelFor"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:gravity="center_horizontal"
+        android:text="@{smsInfo.text}"
+        tools:ignore="Autofill,LabelFor" />
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:imageUrl="@{smsInfo.imageUrl}"
+        tools:ignore="ContentDescription" />
+
+</LinearLayout>
+</layout>
